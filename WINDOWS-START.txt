@@ -1,0 +1,28 @@
+Macro Studio 0.2.3 — Windows x64 MVP
+
+Extract the whole folder and double-click Macro Studio.exe.
+Keep all companion files together. Python and Node are not needed to run this build.
+
+Click Dry run for your first test; Run macro beside it sends native input. Prepare a safe target window before
+native playback; macros use absolute coordinates and input to the active desktop.
+
+F6: confirm/start or finish recording
+F7: run selected macro
+F8: pause/resume
+F9: stop
+Emergency playback stop: pointer at (0, 0), or Ctrl+Shift+Escape.
+
+Select multiple actions/macros with their checkboxes, then use Delete selected.
+Undo last change restores a batch deletion.
+Playback settings > Execution mode: Run once or Loop, with a fixed count or
+Repeat until stopped. Keybinds at the top right changes and saves application keys.
+The F6/F7/F8/F9 keys listed above are the defaults.
+
+Recording begins only after your explicit confirmation. Avoid sensitive fields;
+macros, recovery journals and backups contain recorded input in plain text.
+
+The new UI, continuous dry-run loop and keybind settings passed desktop checks.
+Native input/custom key delivery could not be reverified in this revision's run;
+see VERIFICATION.md in the accompanying source project for the exact limitation.
+This is an unsigned MVP. macOS/Linux require separate builds and platform tests.
+Full source, setup/build instructions and verification notes accompany this package.

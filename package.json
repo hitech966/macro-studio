@@ -1,0 +1,82 @@
+{
+  "name": "macro-studio",
+  "version": "0.2.3",
+  "private": true,
+  "description": "Explicit, local desktop automation with an isolated engine",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "start": "npm run build && electron .",
+    "desktop:dev": "electron . --dev",
+    "test": "node scripts/test.cjs",
+    "test:desktop": "electron . --smoke-test",
+    "package": "npm run build && npm run engine:bundle && electron-builder --dir",
+    "engine:bundle": "node scripts/bundle-engine.cjs"
+  },
+  "build": {
+    "appId": "local.macrostudio.desktop",
+    "productName": "Macro Studio",
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "engine",
+        "to": "engine",
+        "filter": [
+          "**/*.py",
+          "requirements.txt"
+        ]
+      },
+      {
+        "to": "macro-engine",
+        "from": "engine-dist/macro-engine"
+      }
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "dir",
+      "icon": "desktop/icon.ico"
+    },
+    "mac": {
+      "target": "dir"
+    },
+    "linux": {
+      "target": "dir"
+    },
+    "electronDist": "node_modules/electron/dist",
+    "icon": "desktop/icon.png"
+  },
+  "dependencies": {
+    "lucide-react": "^1.52.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "agent-browser": "^0.38.2",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  },
+  "type": "module",
+  "author": "Macro Studio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hitech966/macro-studio.git"
+  },
+  "homepage": "https://github.com/hitech966/macro-studio#readme",
+  "bugs": {
+    "url": "https://github.com/hitech966/macro-studio/issues"
+  }
+}

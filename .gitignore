@@ -1,0 +1,18 @@
+node_modules/
+.venv/
+dist/
+release/
+engine-dist/
+work/
+__pycache__/
+*.pyc
+test-results/
+
+# Private configuration and user recordings
+.env
+.env.*
+!.env.example
+*.log
+smoke-profile/
+.DS_Store
+Thumbs.db

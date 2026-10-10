@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "safe-demo",
+  "name": "Safe timing demo",
+  "profile": "Examples",
+  "script": "# A timing-only macro; sends no native input.\nrepeat 3\nwait 0.25\nend\n",
+  "actions": [
+    { "type": "wait", "delay": 250 },
+    { "type": "wait", "delay": 250 },
+    { "type": "wait", "delay": 250 }
+  ]
+}
